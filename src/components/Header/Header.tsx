@@ -1,16 +1,18 @@
 import React from 'react'
 import { Controls } from './Controls'
 import { Buttons } from './Buttons'
-
-export const Header = () => {
+import { IoIosChatboxes as IconChat } from "react-icons/io";
+export const Header:React.FC = () => {
   return (
-    <div>
-        <div>
-            <div>logo</div>
+    <header>
+        <section className='header__title'>
+            <IconChat/>
             <h1>Chat Rooms</h1>
-        </div>
-        <Controls/>
-        <Buttons/>
-    </div>
+        </section>
+        <section className='header__side'>
+          <Controls/>
+          <Buttons/>
+        </section>
+    </header>
   )
 }
