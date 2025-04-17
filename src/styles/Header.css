@@ -15,9 +15,6 @@
     font-size: 2rem;
     color:rgb(28, 75, 146)
 }
-.header__title h1{
-
-}
 .header__side{
     display: flex;
     align-items: center;
@@ -25,7 +22,23 @@
     gap:50px;
 }
 /* COMPONENT:Controls */
-
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px
+}
+.controls__theme{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none
+}
+.controls__idiom{
+    font-size: 1.2rem;
+    outline: none;
+}
 /* COMPONENT: Buttons */
 .buttons{
     display: flex;
