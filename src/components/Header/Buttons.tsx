@@ -1,7 +1,10 @@
 import React from 'react'
 
-export const Buttons = () => {
+export const Buttons:React.FC = () => {
   return (
-    <div>Buttons</div>
+    <div className='buttons'>
+      <button>Log In</button>
+      <button>Sign Up</button>
+    </div>
   )
 }
