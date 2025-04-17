@@ -1,7 +1,10 @@
 import React from 'react'
+import { Header } from '../components/Header/Header'
 
-export const Main = () => {
+export const Main:React.FC = () => {
   return (
-    <div>Main</div>
+    <div>
+      <Header/>
+    </div>
   )
 }

@@ -1,0 +1,29 @@
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:15px 30px;
+    border-bottom:1px solid black
+}
+.header__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px
+}
+.header__title-logo{
+    font-size: 2rem;
+    color:rgb(28, 75, 146)
+}
+.header__title h1{
+
+}
+.header__side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+}
+/* COMPONENT:Controls */
+
+/* COMPONENT: Buttons */
