@@ -7,7 +7,7 @@ import '../../styles/Header.css'
 export const Header:React.FC = () => {
   return (
     <header className='header'>
-        <Link to='/' className='header__title'>
+        <Link to='/' className='header__title link'>
             <IconChat className='header__title-logo'/>
             <h1>Chat Rooms</h1>
         </Link>

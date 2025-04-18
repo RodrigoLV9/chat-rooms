@@ -13,7 +13,7 @@ export const RoomCard:React.FC = () => {
             <p>320 online</p>
         </div>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, unde aperiam minus.</p>
-        <Link to='/chat-room' className='roomCard__button'>
+        <Link to='/chat-room' className='roomCard__button link'>
             <p>Join</p>
             <IconArrow className='roomCard-icon'/>
         </Link>

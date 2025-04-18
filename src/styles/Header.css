@@ -11,6 +11,9 @@
     justify-content: center;
     gap:10px
 }
+.header__title h1{
+    color:black;
+}
 .header__title-logo{
     font-size: 2rem;
     color:rgb(28, 75, 146)

@@ -7,7 +7,7 @@ export const Hero:React.FC = () => {
     <section className='hero'>
         <h1>Join Real-time chat rooms</h1>
         <p>Connect with people from around the world in our diverse community chat rooms.</p>
-        <Link to='/chat-room' className='hero__button'>
+        <Link to='/chat-room' className='hero__button link'>
             <p>Join General Chat</p>
             <IconArrow className='hero__button-icon'/>
         </Link>
