@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { FaRegEyeSlash as IconEyeDisabled } from "react-icons/fa";
 import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
+import '../styles/Session.css'
 export const Register:React.FC = () => {
   return (
     <main className='pageRegister'>
@@ -24,21 +25,21 @@ export const Register:React.FC = () => {
           <label htmlFor="" className='containerInput__label'>Password*</label>
           <div className="containerInput-input">
             <input type="text" placeholder='Write your password' className='containerInput__input'/>
-            <IconEyeDisabled/>
+            <IconEyeDisabled className='containerInput__icons'/>
           </div>
         </div>
         <div className="containerInput">
           <label htmlFor="" className='containerInput__label'>Repeat password*</label>
           <div className="containerInput-input">
             <input type="text" placeholder='Write your password' className='containerInput__input'/>
-            <IconEyeEnabled/>
+            <IconEyeEnabled className='containerInput__icons'/>
           </div>
         </div>
-        <div className="form__">
-          <button>Sign Up</button>
+        <div className="form__buttons">
+          <button className='form__buttons-main'>Sign Up</button>
           <p>or</p>
-          <button>
-            <IconGoogle/>
+          <button className='form__buttons-google'>
+            <IconGoogle className='form__buttons-google-icon'/>
             <p>Sign Up with Google</p>
           </button>
         </div>

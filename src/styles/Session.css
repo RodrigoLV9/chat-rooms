@@ -1,0 +1,93 @@
+.pageRegister{
+    width: 600px;
+    margin:40px auto;
+    padding:20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    box-shadow:1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+.pageRegister h1{
+    text-align: center;
+    margin:15px 0
+}
+.pageRegister__text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px
+
+}
+.pageRegister__form{
+    width: min-content;
+    margin:auto;
+}
+.containerInput{
+    margin:20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+.containerInput__label{
+    padding:3px 0
+}
+.containerInput__input{
+    width: 400px;
+    height: 35px;
+    padding:5px;
+    outline:none;
+    font-size: .9rem;
+}
+.containerInput-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+.containerInput__icons{
+    font-size: 1.2rem;
+    position:absolute;
+    right:10px;
+    cursor:pointer
+}
+
+/* BUTTONS */
+.form__buttons{
+    margin-top:50px;
+}
+.form__buttons p{
+    text-align: center;
+    margin:10px 0
+}
+.form__buttons button{
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: .9rem;
+    transition: background-color .2s ease-in;
+}
+.form__buttons-main{
+    background-color: #3a63a7;
+    color: white;
+    border:none;
+}
+.form__buttons-google{
+    padding:10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    border:1px solid black;
+}
+.form__buttons-main:hover{
+    background-color: #2d4d80;
+}
+.form__buttons-google:hover{
+    background-color: rgb(228, 225, 225);
+}
+.form__buttons-google-icon{
+    font-size:1.4rem
+}
