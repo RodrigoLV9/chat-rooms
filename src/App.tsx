@@ -13,7 +13,6 @@ import { TermsService } from './pages/TermsService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { ContactUs } from './pages/ContactUs';
 import { ChatRoom } from './pages/ChatRoom';
-
 function App() {
   return (
     <>
@@ -33,5 +32,4 @@ function App() {
     </>
   )
 }
-
 export default App
