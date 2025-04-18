@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ChatRoom = () => {
+export const ChatRoom:React.FC = () => {
   return (
     <div>ChatRoom</div>
   )
