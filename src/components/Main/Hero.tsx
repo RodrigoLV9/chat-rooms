@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoArrowRight as IconArrow } from "react-icons/go";
+import '../../styles/Hero.css'
 export const Hero:React.FC = () => {
   return (
     <section className='hero'>
@@ -7,7 +8,7 @@ export const Hero:React.FC = () => {
         <p>Connect with people from around the world in our diverse community chat rooms.</p>
         <button className='hero__button'>
             <p>Join General Chat</p>
-            <IconArrow/>
+            <IconArrow className='hero__button-icon'/>
         </button>
     </section>
   )
