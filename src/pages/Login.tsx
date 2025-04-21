@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import { FaRegEyeSlash as IconEyeDisabled } from "react-icons/fa";
 import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
 export const Login:React.FC = () => {
+  const [isEyeEnabled, setEyeEnabled]=useState<boolean | undefined>(false)
+  const handleEyeClick=()=>{
+    setEyeEnabled(!isEyeEnabled)
+  }
   return (
     <main className='pageRegister'>
       <h1>Log In</h1>
@@ -19,8 +23,10 @@ export const Login:React.FC = () => {
         <div className="containerInput">
           <label htmlFor="" className='containerInput__label'>Password*</label>
           <div className="containerInput-input">
-            <input type="text" placeholder='Write your password' className='containerInput__input'/>
-            <IconEyeDisabled className='containerInput__icons'/>
+            <input type={isEyeEnabled ? "text" :"password"} placeholder='Write your password' className='containerInput__input'/>
+            {
+              isEyeEnabled ? <IconEyeEnabled className='containerInput__icons' onClick={handleEyeClick}/> : <IconEyeDisabled className='containerInput__icons' onClick={handleEyeClick}/>
+            }
           </div>
         </div>
         <div className="form__buttons">
