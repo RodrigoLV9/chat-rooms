@@ -4,7 +4,10 @@ import { Buttons } from './Buttons'
 import { IoIosChatboxes as IconChat } from "react-icons/io";
 import {Link} from 'react-router-dom'
 import '../../styles/Header.css'
+import { Profile } from './Profile';
+import { useUser } from '../../Contexts/UserContext';
 export const Header:React.FC = () => {
+  const {user}=useUser()
   return (
     <header className='header'>
         <Link to='/' className='header__title link'>
@@ -13,7 +16,12 @@ export const Header:React.FC = () => {
         </Link>
         <section className='header__side'>
           <Controls/>
-          <Buttons/>
+          {
+            user==undefined ?
+            <Buttons/>
+            :
+            <Profile/>
+          }
         </section>
     </header>
   )

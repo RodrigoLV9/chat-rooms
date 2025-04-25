@@ -4,7 +4,7 @@ import { FaRegEyeSlash as IconEyeDisabled } from "react-icons/fa";
 import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
 import {signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword, updateProfile, getAuth} from 'firebase/auth'
-import { getFirestore,doc,setDoc } from 'firebase/firestore';
+/* import { getFirestore,doc,setDoc } from 'firebase/firestore'; */
 import {app} from '../assets/firebase.js'
 import '../styles/Session.css'
 export const Register:React.FC = () => {

@@ -49,7 +49,7 @@
     justify-content: center;
     
 }
-.buttons__login, .buttons__register{
+.buttons__login, .buttons__register, .profile__logout{
     margin:10px;
     border-radius: 5px;
     width: 120px;
@@ -77,4 +77,38 @@
 }
 .buttons__register:hover{
     background-color: rgb(67, 53, 148);
+}
+/* COMPONENT: Profile */
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px
+}
+.profile__logout{
+    border:2px solid tomato;
+    transition: background-color .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.profile__logout:hover{
+    background-color: tomato;
+}
+.profile__user{
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    font-size: 1rem;
+    border:1px solid gray;
+    padding:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    border-radius: 5px;
+    background-color: rgb(201, 201, 201);
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.profile__user:hover{
+    border-color:rgb(87, 87, 87);
+    background-color: rgb(189, 189, 189);
+    scale: 1.01;
 }
