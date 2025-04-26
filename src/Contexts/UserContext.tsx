@@ -6,8 +6,8 @@ interface UserContextType{
 }
 interface UserType{
     id:string,
-    username:string,
-    email:string
+    username:string | null,
+    email:string | null
 }
 const MyContext=createContext<UserContextType | undefined>(undefined)
 export const UserContext:React.FC<{children:ReactNode}> = ({children}) => {

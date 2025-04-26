@@ -5,7 +5,9 @@ import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
 import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, getAuth} from 'firebase/auth'
 import {app} from '../assets/firebase.js'
+import { useUser } from '../Contexts/UserContext.js';
 export const Login:React.FC = () => {
+  const {setUser}=useUser()
   const [email,setEmail]=useState<string>("")
   const [password,setPassword]=useState<string>("")
   const auth=getAuth(app)
@@ -14,7 +16,12 @@ export const Login:React.FC = () => {
     e.preventDefault()
     try{
       const userCredential= await signInWithEmailAndPassword(auth,email,password)
-      console.log(userCredential.user)
+      const user=userCredential.user
+      await setUser({
+        id:user.uid,
+        username:user.displayName,
+        email:user.email
+      })
     }catch(error){
       console.log(error)
     }

@@ -7,7 +7,9 @@ import {signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword, upda
 /* import { getFirestore,doc,setDoc } from 'firebase/firestore'; */
 import {app} from '../assets/firebase.js'
 import '../styles/Session.css'
+import { useUser } from '../Contexts/UserContext.js';
 export const Register:React.FC = () => {
+  const {setUser}=useUser()
   const [email, setEmail]=useState<string>("")
   const [password, setPassword]=useState<string>("")
   const [username,setUsername]=useState<string>("")
@@ -23,6 +25,13 @@ export const Register:React.FC = () => {
       createAt: new Date()
     }) */
    await updateProfile(user,{displayName:username})
+   await setUser(
+    {
+      id:user.uid,
+      username:user.displayName,
+      email:user.email
+    }
+   )
   }catch(error){
     console.log(error)
   }
