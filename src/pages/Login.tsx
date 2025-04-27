@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom'
 import { FaRegEyeSlash as IconEyeDisabled } from "react-icons/fa";
 import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
-import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, getAuth} from 'firebase/auth'
-import {app} from '../assets/firebase.js'
+import {signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, getAuth,setPersistence, browserLocalPersistence} from 'firebase/auth'
+import {app} from '../assets/firebase.ts'
 import { useUser } from '../Contexts/UserContext.js';
 export const Login:React.FC = () => {
   const {setUser}=useUser()
@@ -15,6 +15,7 @@ export const Login:React.FC = () => {
   const handleLogin=async(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     try{
+      await setPersistence(auth,browserLocalPersistence)
       const userCredential= await signInWithEmailAndPassword(auth,email,password)
       const user=userCredential.user
       await setUser({
@@ -26,7 +27,21 @@ export const Login:React.FC = () => {
       console.log(error)
     }
   }
-
+  const handleLoginGoogle=async()=>{
+    try{
+      await setPersistence(auth,browserLocalPersistence)
+      const provider=new GoogleAuthProvider()
+      const userCredential=await signInWithPopup(auth,provider)
+      const user=userCredential.user
+      await setUser({
+        id:user.uid,
+        username:user.displayName,
+        email:user.email
+      })
+    }catch(error){
+      console.log('Error in login with Google: ',error)
+    }
+  }
   const handleEyeClick=()=>{
     setEyeEnabled(!isEyeEnabled)
   }
@@ -54,7 +69,7 @@ export const Login:React.FC = () => {
         <div className="form__buttons">
           <button className='form__buttons-main'>Log In</button>
           <p>or</p>
-          <button className='form__buttons-google'>
+          <button className='form__buttons-google' onClick={handleLoginGoogle}>
             <IconGoogle className='form__buttons-google-icon'/>
             <p>Log In with Google</p>
           </button>

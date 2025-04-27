@@ -13,7 +13,27 @@ import { TermsService } from './pages/TermsService';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { ContactUs } from './pages/ContactUs';
 import { ChatRoom } from './pages/ChatRoom';
+import { useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useUser } from './Contexts/UserContext';
+
 function App() {
+  const {setUser}=useUser()
+  const auth=getAuth()
+  useEffect(()=>{
+    const unsubscribe=onAuthStateChanged(auth,(user)=>{
+      if(user){
+        setUser({
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+        });
+      }else{
+        setUser(undefined)
+      }
+    })
+    return ()=> unsubscribe()
+  },[auth,setUser])
   return (
     <>
       <Router>

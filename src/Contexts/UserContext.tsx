@@ -2,7 +2,7 @@ import React,{useState, useContext, createContext, ReactNode} from 'react'
 
 interface UserContextType{
     user:UserType | undefined,
-    setUser:(user:UserType)=>void
+    setUser:(user:UserType | undefined)=>void
 }
 interface UserType{
     id:string,

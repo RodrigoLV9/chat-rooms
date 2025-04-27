@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 import { FaRegEyeSlash as IconEyeDisabled } from "react-icons/fa";
 import { FaRegEye as IconEyeEnabled } from "react-icons/fa";
 import { FcGoogle as IconGoogle } from "react-icons/fc";
-import {signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword, updateProfile, getAuth} from 'firebase/auth'
+import {signInWithPopup, GoogleAuthProvider,createUserWithEmailAndPassword, updateProfile, getAuth, browserLocalPersistence, setPersistence} from 'firebase/auth'
 /* import { getFirestore,doc,setDoc } from 'firebase/firestore'; */
-import {app} from '../assets/firebase.js'
+import {app} from '../assets/firebase.ts'
 import '../styles/Session.css'
 import { useUser } from '../Contexts/UserContext.js';
 export const Register:React.FC = () => {
@@ -17,6 +17,7 @@ export const Register:React.FC = () => {
   /* const db=getFirestore(app) */
  const handleRegister=async()=>{
   try{
+    await setPersistence(auth,browserLocalPersistence)
     const userCredential=await createUserWithEmailAndPassword(auth,email,password)
     const user=userCredential.user
     /* await setDoc(doc(db,"users",user.uid).{
@@ -32,6 +33,7 @@ export const Register:React.FC = () => {
       email:user.email
     }
    )
+   await localStorage.setItem("refreshToken",user.refreshToken)
   }catch(error){
     console.log(error)
   }
@@ -43,8 +45,15 @@ export const Register:React.FC = () => {
   }
   const handleRegisterGoogle=async()=>{
     try{
+      await setPersistence(auth,browserLocalPersistence)
       const provider = new GoogleAuthProvider()
-      await signInWithPopup(auth,provider)
+      const userCredential=await signInWithPopup(auth,provider)
+      const user=userCredential.user
+      setUser({
+        id:user.uid,
+        username:user.displayName,
+        email:user.email
+      })
       console.log("Logged with Google")
     }catch(error){
       console.log(error)
