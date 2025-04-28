@@ -1,0 +1,108 @@
+.chatRoom{
+    width: min-content;
+    display:flex;
+    align-items: start;
+    justify-content: center;
+    border:1px solid black;
+    padding:10px 25px;
+    border-radius: 10px;
+    margin:70px auto
+}
+
+/* COMPONENT: ChatMessages */
+.chatMessages{
+
+}
+.chatMessages__title{
+    height: 40px;
+}
+.chatMessages__list{
+    width: 130px;
+    height: 500px;
+    overflow-y:auto;
+}
+.userCard{
+    width: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    padding:5px 10px;
+    box-shadow: 1px 1px 2px 2px rgb(190, 188, 188);
+    font-size: .8rem;
+    border-radius: 2px;
+    margin-bottom:5px;
+    cursor:pointer
+}
+.userCard__icon{
+    color:steelblue
+}
+
+/* COMPONENT: ChatBox */
+.chatBox{
+    width:500px;
+    
+}
+.chatBox__title{
+    height: 40px;
+}
+.chatBox__form{
+    width: max-content;
+    height: 35px;
+    margin:10px;
+    border:1px solid gray;
+    border-radius:5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.chatBox__form input{
+    padding:5px 10px;
+    width: 440px;
+    outline: none;
+    border:none;
+    background-color: transparent;
+    font-size: .9rem;
+}
+.chatBox__form button{
+    font-size: 1.3rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border:none;
+    cursor:pointer;
+    background-color: transparent;
+}
+.chatBox__display{
+    height: 450px;
+    overflow-y: auto;
+}
+.message{
+    padding:5px 10px;
+    border:1px solid gray;
+    margin:0 5px 5px 10px;
+    border-radius: 3px;
+}
+.message__user{
+    font-size: .9rem;
+}
+.message__text{
+    font-size: .8rem;
+    color: rgb(31, 31, 31);
+}
+
+/* COMPONENT: ChatUsers */
+.chatUsers{
+    height: 40px;
+}
+.chatUsers__title p{
+    font-size:.8rem;
+    color:rgb(31, 31, 31)
+}
+.chatUsers__list{
+    width: 130px;
+    height: 500px;
+    overflow-y: auto;
+}

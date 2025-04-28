@@ -3,8 +3,8 @@ import { IoSend as IconSend } from "react-icons/io5";
 import {Message} from './Message.tsx'
 export const ChatBox:React.FC = () => {
   return (
-    <div className='chatBox'>
-        <h2>Chat Argentina</h2>
+    <section className='chatBox'>
+        <h2 className='chatBox__title'>Chat Argentina</h2>
         <div className="chatBox__display">
           <Message/>
           <Message/>
@@ -12,13 +12,14 @@ export const ChatBox:React.FC = () => {
           <Message/>
           <Message/>
           <Message/>
+          <Message/>
         </div>
-        <div className="chatBox__containerInput">
+        <form className="chatBox__form">
             <input type="text" placeholder='Type your message here...' />
             <button>
                 <IconSend/>
             </button>
-        </div>
-    </div>
+        </form>
+    </section>
   )
 }

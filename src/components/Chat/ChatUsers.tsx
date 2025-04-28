@@ -3,7 +3,7 @@ import { UserCard } from './UserCard';
 
 export const ChatUsers:React.FC = () => {
   return (
-    <div className='chatUsers'>
+    <section className='chatUsers'>
         <div className="chatUsers__title">
           <h3>Users</h3>
           <p>77 online</p>
@@ -17,6 +17,6 @@ export const ChatUsers:React.FC = () => {
           <UserCard/>
           <UserCard/>
         </ul>
-    </div>
+    </section>
   )
 }
