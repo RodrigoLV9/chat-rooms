@@ -1,10 +1,13 @@
 import React from 'react'
-
-export const Message:React.FC = () => {
+interface MessageProps{
+  user:string | undefined,
+  text:string | undefined
+}
+export const Message:React.FC<MessageProps> = ({user,text}) => {
   return (
     <div className="message">
-        <p className='message__user'>Persona 1</p>
-        <p className='message__text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis doloremque repellat iusto, nihil pariatur autem at ab adipisci</p>
+        <p className='message__user'>{user}</p>
+        <p className='message__text'>{text}</p>
     </div>
   )
 }
